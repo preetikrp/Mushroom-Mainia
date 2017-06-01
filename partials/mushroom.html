@@ -1,0 +1,15 @@
+<!-- we are setting this page to see mushroom(json) in dom -->
+<header>
+    <h1>List of mushrooms</h1></header>
+<input type="text" placeholder="preeti search for mushrooms" ="" ng-model="ang">
+<input type="radio" name="" ng-model="searchList" value="false">Poisonous
+<input type="radio" name="" ng-model="searchList" value="true">Nonpoisonous
+<section>
+    <!-- ng- repeat is like for loop in html file. -->
+    <div ng-repeat="item in mushrooms | filter : ang | filter : {edible: searchList}" >
+        <!-- //{{}} tells html tha its a variable. -->
+        <h1>{{item.name}}</h1>
+        <p>{{item.description}}</p>
+    </div>
+</section>
+
